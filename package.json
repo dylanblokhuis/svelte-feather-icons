@@ -1,23 +1,39 @@
 {
-  "name": "SvelteComponent",
-  "svelte": "src/index.html",
+  "name": "svelte-feather-icons",
+  "description": "Feather icons for Svelte (Completely based on vue-feather-icons by EGOIST)",
+  "version": "1.0.2",
+  "author": "dylanblokhuis <dylanblokhuis3@hotmail.com>",
+  "repository": {
+    "url": "dylanblokhuis/svelte-feather-icons",
+    "type": "git"
+  },
+  "svelte": "src/index.js",
   "module": "index.mjs",
   "main": "index.js",
-  "scripts": {
-    "build": "rollup -c",
-    "prepublishOnly": "npm run build"
-  },
-  "devDependencies": {
-    "rollup": "^0.67.4",
-    "rollup-plugin-svelte": "^4.4.0",
-    "svelte": "^2.15.3"
-  },
-  "keywords": [
-    "svelte"
-  ],
   "files": [
     "src",
     "index.mjs",
     "index.js"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build:icons": "node build",
+    "build:dist": "rollup -c",
+    "build": "npm run build:icons && npm run build:dist",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "feather-icons": "^4.21.0",
+    "fs-extra": "^8.0.1",
+    "pascal-case": "^2.0.1",
+    "path": "^0.12.7",
+    "rollup": "latest",
+    "rollup-plugin-svelte": "latest",
+    "svelte": "latest",
+    "rollup-plugin-terser": "^5.0.0"
+  },
+  "keywords": [
+    "svelte",
+    "feather icons"
   ]
 }
