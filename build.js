@@ -3,18 +3,22 @@ const feather = require('feather-icons')
 const pascalCase = require('pascal-case')
 const fs = require('fs-extra')
 
-const componentTemplate = (name, svg) => `${svg}`
+const componentTemplate = (name, svg) => `
+<svelte:options tag="${name}" />
+${svg}
+`
 
 const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 
 const icons = Object.keys(feather.icons).map(name => ({
   name,
-  pascalCasedComponentName: pascalCase(`${handleComponentName(name)}-icon`)
+  pascalCasedComponentName: pascalCase(`${handleComponentName(name)}-icon`),
+  kebabCasedComponentName: `${handleComponentName(name)}-icon`
 }))
 
 Promise.all(icons.map(icon => {
   const svg = feather.icons[icon.name].toSvg()
-  const component = componentTemplate(icon.pascalCasedComponentName, svg)
+  const component = componentTemplate(icon.kebabCasedComponentName, svg)
   const filepath = `./src/icons/${icon.pascalCasedComponentName}.html`
   return fs.ensureDir(path.dirname(filepath))
     .then(() => fs.writeFile(filepath, component, 'utf8'))
