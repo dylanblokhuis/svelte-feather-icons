@@ -3,7 +3,7 @@ const feather = require('feather-icons')
 const pascalCase = require('pascal-case')
 const fs = require('fs-extra')
 
-const componentTemplate = (name, svg) => `<svelte:options tag={null} /> ${svg}`
+const componentTemplate = (name, svg) => `${svg}`
 
 const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 
