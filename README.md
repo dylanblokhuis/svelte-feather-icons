@@ -3,7 +3,11 @@
 ## Install
 
 ```bash
-yarn add svelte-feather-icons
+yarn add --dev svelte-feather-icons
+```
+or use NPM
+```bash
+npm install --save-dev svelte-feather-icons
 ```
 
 ## Usage
@@ -14,7 +18,7 @@ yarn add svelte-feather-icons
         import { AirplayIcon, AtSignIcon, ... } from 'svelte-feather-icons'
     </script>
     
-    <!-- When using custom elements --->
+    <!-- When using custom elements -->
     <airplay-icon />
     
     <!-- When using regular svelte compontent -->
