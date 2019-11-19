@@ -16,12 +16,9 @@ npm install --save-dev svelte-feather-icons
     <script>
         // Only import what you need!
         import { AirplayIcon, AtSignIcon, ... } from 'svelte-feather-icons'
+
     </script>
     
-    <!-- When using custom elements -->
-    <airplay-icon />
-    
-    <!-- When using regular svelte compontent -->
     <AirplayIcon />
 ```
 
