@@ -16,9 +16,7 @@ export default {
 		{ file: pkg.main, 'format': 'umd', name }
 	],
 	plugins: [
-		svelte({
-			customElement: true
-		}),
+		svelte(),
 		resolve(),
 		terser()
 	]
