@@ -23,15 +23,15 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "feather-icons": "4.24.1",
+    "feather-icons": "4.25.0",
     "fs-extra": "^8.1.0",
-    "pascal-case": "^2.0.1",
+    "pascal-case": "^3.1.1",
     "path": "^0.12.7",
-    "rollup": "latest",
+    "rollup": "^1.29.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "latest",
-    "rollup-plugin-terser": "^5.1.2",
-    "svelte": "latest",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-terser": "^5.2.0",
+    "svelte": "^3.18.0"
   },
   "keywords": [
     "svelte",
