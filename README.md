@@ -16,10 +16,10 @@ npm install --save-dev svelte-feather-icons
     <script>
         // Only import what you need!
         import { AirplayIcon, AtSignIcon, ... } from 'svelte-feather-icons'
-
     </script>
     
-    <AirplayIcon />
+    <AirplayIcon size="24" />
+    <AtSignIcon size="1.5x" />
 ```
 
 See all icons and usage here: https://vue-feather-icons.netlify.com
