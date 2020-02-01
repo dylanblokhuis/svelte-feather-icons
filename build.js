@@ -8,7 +8,7 @@ const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 const component = (icon) =>
 `<script>
   export let size = "100%";
-  let customClass;
+  let customClass = "";
   export { customClass as class };
 
   if (size !== "100%") {
