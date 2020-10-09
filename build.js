@@ -8,6 +8,7 @@ const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 const component = (icon) =>
 `<script>
   export let size = "100%";
+  export let strokeWidth = 2;
   let customClass = "";
   export { customClass as class };
 
@@ -18,7 +19,7 @@ const component = (icon) =>
   }
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill="none" viewBox="0 0 24 24"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-${icon.name} {customClass}">${feather[icon.name]}</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill="none" viewBox="0 0 24 24"  stroke="currentColor" stroke-width="{strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="feather feather-${icon.name} {customClass}">${feather[icon.name]}</svg>
 `
 
 const icons = Object.keys(feather).map(name => ({
