@@ -37,5 +37,5 @@ Promise.all(icons.map(icon => {
     .map(icon => `export { default as ${icon.pascalCasedComponentName} } from './icons/${icon.pascalCasedComponentName}.svelte'`)
     .join('\n\n')
   await fs.outputFile("index.d.ts", '///<reference types="svelte" />\n\n' + main, 'utf8');
-  return fs.outputFile('./src/index.js', main, 'utf8')
+  return await fs.outputFile('./src/index.js', main, 'utf8')
 })
