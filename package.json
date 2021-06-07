@@ -13,8 +13,10 @@
   "files": [
     "src",
     "index.mjs",
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
+  "types": "index.d.ts",
   "license": "MIT",
   "scripts": {
     "build:icons": "node build",
@@ -27,14 +29,16 @@
     "fs-extra": "^8.1.0",
     "pascal-case": "^3.1.1",
     "path": "^0.12.7",
-    "rollup": "^1.29.1",
+    "rollup": "latest",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "latest",
-    "rollup-plugin-terser": "^5.2.0",
-    "svelte": "^3.18.0"
+    "rollup-plugin-terser": "^5.2.0"
   },
   "keywords": [
     "svelte",
     "feather icons"
-  ]
+  ],
+  "dependencies": {
+    "svelte": "^3.18.0"
+  }
 }
