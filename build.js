@@ -32,9 +32,10 @@ Promise.all(icons.map(icon => {
   const filepath = `./src/icons/${icon.pascalCasedComponentName}.svelte`
   return fs.ensureDir(path.dirname(filepath))
     .then(() => fs.writeFile(filepath, component(icon), 'utf8'))
-})).then(() => {
+})).then(async () => {
   const main = icons
     .map(icon => `export { default as ${icon.pascalCasedComponentName} } from './icons/${icon.pascalCasedComponentName}.svelte'`)
     .join('\n\n')
-  return fs.outputFile('./src/index.js', main, 'utf8')
+  await fs.outputFile("index.d.ts", '///<reference types="svelte" />\n\n' + main, 'utf8');
+  return await fs.outputFile('./src/index.js', main, 'utf8')
 })
