@@ -37,7 +37,7 @@ Promise.all(icons.map(icon => {
     .map(icon => `export { default as ${icon.pascalCasedComponentName} } from './icons/${icon.pascalCasedComponentName}.svelte'`)
     .join('\n\n')
   const types = '/// <reference types="svelte" />\nimport {SvelteComponentTyped} from "svelte/internal"\n' +
-    icons.map(icon => `export class ${icon.pascalCasedComponentName} extends SvelteComponentTyped<{size: string, strokeWidth: number, class: string}> {}`).join("\n")
+    icons.map(icon => `export class ${icon.pascalCasedComponentName} extends SvelteComponentTyped<{size?: string, strokeWidth?: number, class?: string}> {}`).join("\n")
   await fs.outputFile("index.d.ts", types, 'utf8');
   return await fs.outputFile('./src/index.js', main, 'utf8')
 })
