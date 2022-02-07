@@ -1,7 +1,7 @@
 {
   "name": "svelte-feather-icons",
   "description": "Feather icons for Svelte (Completely based on vue-feather-icons by EGOIST)",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "author": "dylanblokhuis <dylanblokhuis3@hotmail.com>",
   "repository": {
     "url": "dylanblokhuis/svelte-feather-icons",
