@@ -7,7 +7,7 @@ const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 
 const component = (icon) =>
 `<script>
-  export let size = "100%";
+  export let size = "24";
   export let strokeWidth = 2;
   let customClass = "";
   export { customClass as class };
