@@ -24,7 +24,7 @@ npm install --save-dev svelte-feather-icons
 <AtSignIcon size="1.5x" />
 ```
 
-See all icons and usage here: https://vue-feather-icons.egoist.sh/
+See all icons and usage here: https://feathericons.com/
 
 ## Author
 
