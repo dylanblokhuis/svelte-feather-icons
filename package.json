@@ -10,6 +10,17 @@
   "svelte": "src/index.js",
   "module": "index.mjs",
   "main": "index.js",
+  "exports": {
+    "./src/icons/*.svelte": "./src/icons/*.svelte",
+    "./package.json": "./package.json",
+    "./src": "./src/index.js",
+    ".": {
+      "types": "./index.d.ts",
+      "svelte": "./src/index.js",
+      "import": "./index.mjs",
+      "default": "./index.js"
+    }
+  },
   "files": [
     "src",
     "index.mjs",
