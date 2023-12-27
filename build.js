@@ -1,7 +1,7 @@
-const path = require('path')
-const feather = require('feather-icons/dist/icons.json')
-const { pascalCase } = require('pascal-case')
-const fs = require('fs-extra')
+import path from "path";
+import feather from "feather-icons/dist/icons.json" assert {type: "json"};
+import {pascalCase} from "pascal-case";
+import fs from "fs-extra";
 
 const handleComponentName = name => name.replace(/\-(\d+)/, '$1')
 
