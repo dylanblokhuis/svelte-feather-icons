@@ -9,6 +9,7 @@ const component = (icon) =>
 `<script>
   export let size = "24";
   export let strokeWidth = 2;
+  export let color = "currentColor";
   let customClass = "";
   export { customClass as class };
 
@@ -19,7 +20,7 @@ const component = (icon) =>
   }
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill="none" viewBox="0 0 24 24"  stroke="currentColor" stroke-width="{strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="feather feather-${icon.name} {customClass}">${feather[icon.name]}</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} fill="none" viewBox="0 0 24 24" stroke="{color}" stroke-width="{strokeWidth}" stroke-linecap="round" stroke-linejoin="round" class="feather feather-${icon.name} {customClass}">${feather[icon.name]}</svg>
 `
 
 const icons = Object.keys(feather).map(name => ({
@@ -37,7 +38,7 @@ Promise.all(icons.map(icon => {
     .map(icon => `export { default as ${icon.pascalCasedComponentName} } from './icons/${icon.pascalCasedComponentName}.svelte'`)
     .join('\n\n')
   const types = '/// <reference types="svelte" />\nimport {SvelteComponentTyped} from "svelte/internal"\n' +
-    icons.map(icon => `export class ${icon.pascalCasedComponentName} extends SvelteComponentTyped<{size?: string, strokeWidth?: number, class?: string}> {}`).join("\n")
+    icons.map(icon => `export class ${icon.pascalCasedComponentName} extends SvelteComponentTyped<{size?: string, strokeWidth?: number, color?: string, class?: string}> {}`).join("\n")
   await fs.outputFile("index.d.ts", types, 'utf8');
   return await fs.outputFile('./src/index.js', main, 'utf8')
 })
